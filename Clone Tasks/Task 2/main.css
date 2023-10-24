@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+    background-color:cornflowerblue;
+
+}
+
+h1 {
+    color: white;
+    padding: 10px;
+}
+
+.search {
+    background-color: white;
+    color: gray;
+    border: black solid 2px 2px 2px 2px;
+    width: 300px;
+    padding: 10px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 18px;
+}
+
+img {
+    width: 100%;
+}
+
+.item p, .item1 p {
+    line-height: 1.5;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.button {
+    background-color:dodgerblue;
+    color: white;
+    float: right;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.item1 {
+    width: 60%;
+    height: fit-content;
+    box-shadow: 2px 2px 2px 2px gray;
+    padding-bottom: 50px;
+    padding: 1px;
+}
+
+aside {
+    width: 38%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.item {
+    width: 48%;
+    box-shadow: 2px 2px 2px 2px gray;
+    padding-bottom: 50px;
+    padding: 5px;
+}
+
+.item4 h2{
+    font-size: 16px;
+}
