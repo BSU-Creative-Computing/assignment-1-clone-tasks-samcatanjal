@@ -1,0 +1,92 @@
+// colors
+$lightblue : #4e89ae;
+$blue : #43658b;
+$orange : #ed6663;
+$yellow : #ffa372;
+$bg-color : #8ccff7;
+$hover : #444;
+
+// breakpoints
+@mixin breakpoint($num) {
+    @if $num == small {
+        @media (max-width: 480px) { @content; }
+    }
+    @else if $num == medium {
+        @media (min-width: 481px) and (max-width: 800px) { @content; }
+    }
+    @else if $num == large {
+        @media (min-width: 801px) { @content; }
+    }
+    @else if $num == block {
+        @media (max-width: 620px) { 
+            display: flex;
+            flex-direction: column;
+         }
+    }
+}
+
+// centering
+@mixin centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// resetting initial properties
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// header
+header {
+    background-color: $bg-color;
+    width: 100%;
+    height: fit-content;
+    @include centering;
+}
+
+picture {
+    margin-bottom: -4px;
+}
+
+// rows
+.rows {
+    margin-top: 20px;
+    .row {
+        width: 100%;
+        height: 30px;
+        &.one {background-color: $lightblue;}
+        &.two {background-color: $blue;}
+        &.three {background-color: $orange;}
+        &.four {background-color: $yellow;}
+        &:hover {background-color: $hover;}
+    }
+}
+
+
+// circles
+.circles {
+    @include centering;
+    margin-top: 20px;
+    gap: 10px;
+    .circle {
+        border-radius: 50%;
+        &.one {background-color: $lightblue; height: 70px; width: 70px;}
+        &.two {background-color: $blue; height: 80px; width: 80px;}
+        &.three {background-color: $orange; height: 90px; width: 90px;}
+        &.four {background-color: $yellow; height: 100px; width: 100px;}
+        &:hover {background-color: $hover;}
+    }
+    @include breakpoint(block)
+}
+
+footer {
+    background-color: $bg-color;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

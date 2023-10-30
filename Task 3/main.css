@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #8ccff7;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+picture {
+  margin-bottom: -4px;
+}
+
+.rows {
+  margin-top: 20px;
+}
+.rows .row {
+  width: 100%;
+  height: 30px;
+}
+.rows .row.one {
+  background-color: #4e89ae;
+}
+.rows .row.two {
+  background-color: #43658b;
+}
+.rows .row.three {
+  background-color: #ed6663;
+}
+.rows .row.four {
+  background-color: #ffa372;
+}
+.rows .row:hover {
+  background-color: #444;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.circles .circle {
+  border-radius: 50%;
+}
+.circles .circle.one {
+  background-color: #4e89ae;
+  height: 70px;
+  width: 70px;
+}
+.circles .circle.two {
+  background-color: #43658b;
+  height: 80px;
+  width: 80px;
+}
+.circles .circle.three {
+  background-color: #ed6663;
+  height: 90px;
+  width: 90px;
+}
+.circles .circle.four {
+  background-color: #ffa372;
+  height: 100px;
+  width: 100px;
+}
+.circles .circle:hover {
+  background-color: #444;
+}
+@media (max-width: 620px) {
+  .circles {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+footer {
+  background-color: #8ccff7;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}/*# sourceMappingURL=main.css.map */
