@@ -1,10 +1,4 @@
-// assign 
-$lightblue : #4e89ae;
-$blue : #43658b;
-$orange : #ed6663;
-$yellow : #ffa372;
-$bg-color : #8ccff7;
-$hover : #444;
+$colors : #4e89ae #43658b #ed6663 #ffa372 #8ccff7 #444;
 
 // breakpoints
 @mixin breakpoint($min, $max) {
@@ -30,16 +24,21 @@ $hover : #444;
 
 // header
 header {
-    background-color: $bg-color;
+    background-color: nth($colors, 5);
     width: 100%;
     height: fit-content;
     @include centering;
 }
 
-picture {
-    margin-bottom: -4px;
-}
+.img { margin-bottom: -4px;}
 
+.img1 {@include breakpoint(621px, 1500px) {display: none;}}
+
+.img2 {
+    @include breakpoint(0px, 620px) {display: none;}
+    @include breakpoint(1024px, 1500px) {display: none;}
+}
+.img3 {@include breakpoint(0, 1023px) {display: none;}}
 
 // rows
 .rows {
@@ -50,11 +49,11 @@ picture {
         @include breakpoint (0, 620px) {
             height: 20px;
         }
-        &.one {background-color: $lightblue;}
-        &.two {background-color: $blue;}
-        &.three {background-color: $orange;}
-        &.four {background-color: $yellow;}
-        &:hover {background-color: $hover;}
+        &.one {background-color: nth($colors, 1);}
+        &.two {background-color: nth($colors, 2);}
+        &.three {background-color: nth($colors, 3);}
+        &.four {background-color: nth($colors, 4);}
+        &:hover {background-color: nth($colors, 6);}
     }
 }
 
@@ -66,11 +65,11 @@ picture {
     gap: 10px;
     .circle {
         border-radius: 50%;
-        &.one {background-color: $lightblue; height: 70px; width: 70px;}
-        &.two {background-color: $blue; height: 80px; width: 80px;}
-        &.three {background-color: $orange; height: 90px; width: 90px;}
-        &.four {background-color: $yellow; height: 100px; width: 100px;}
-        &:hover {background-color: $hover;}
+        &.one {background-color: nth($colors, 1); height: 70px; width: 70px;}
+        &.two {background-color: nth($colors, 2); height: 80px; width: 80px;}
+        &.three {background-color: nth($colors, 3); height: 90px; width: 90px;}
+        &.four {background-color: nth($colors, 4); height: 100px; width: 100px;}
+        &:hover {background-color: nth($colors, 6);}
     }
     @include breakpoint(0, 620px) {
         display: flex;
@@ -79,7 +78,7 @@ picture {
 }
 
 footer {
-    background-color: $bg-color;
+    background-color: nth($colors, 5);
     height: 50px;
     width: 100%;
     position: fixed;
