@@ -1,3 +1,4 @@
+/* resetting all properties */
 * {
     margin: 0;
     padding: 0;
@@ -5,34 +6,42 @@
     font-family:'Courier New', Courier, monospace;
 }
 
+body {
+    background-color: aliceblue;
+}
+
+/* header */
 .logo {
     width: 60px;
     padding: 10px;
 }
 
-body {
-    background-color: aliceblue;
-}
+/* main */
 
-img {
+img { /* setting image to maximize size to fit container */
     width: 100%;
 }
 
-.images {
+.images { /* creating grid with 3 columns to contain images */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.container {
-    display: grid;
-    grid-template-rows: auto;
+.container { /* aligning container to center and assigning its width & color */
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     background-color: white;
 }
 
-footer {
+.texts p { /* assigning properties of paragraphs */
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px;
+}
+
+/* footer */
+
+footer { /* assigning properties of footer */
     background-color: black;
     color: white;
     padding: 20px;
@@ -40,19 +49,16 @@ footer {
     width: 100%;
 }
 
-.texts p {
-    font-size: 12px;
-    line-height: 1.5;
-    padding: 15px;
-}
 
 
+/* when width of page is between 801px to 1024px content fills screen width */
 @media screen and (min-width: 801px) and (max-width:1024px) {
     .container {
         width: 100%;
     }
 }
 
+/* when width of page is between 401px to 800px grid of images become 2 columns */
 @media screen and (min-width: 401px) and (max-width: 800px) {
     .container {
         width: 100%;
@@ -63,6 +69,7 @@ footer {
     }
 }
 
+/* when width of page is equal to or below 480px each image is 100% of page width and is shown after each other vertically */
 @media screen and (max-width: 480px) {
     .container {
         width: 100%;
@@ -73,3 +80,4 @@ footer {
     }
 }
 
+/* anything above 1024px follows default parameters */
