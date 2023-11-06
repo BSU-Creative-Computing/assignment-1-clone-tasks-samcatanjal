@@ -7,6 +7,14 @@ $colors : #4e89ae #43658b #ed6663 #ffa372 #8ccff7 #444;
     }
 };
 
+@mixin min($min) {
+    @media (min-width: $min) {@content}
+};
+
+@mixin max($max) {
+    @media (max-width: $max) {@content}
+};
+
 // centering
 @mixin centering {
     display: flex;
@@ -32,11 +40,11 @@ header {
 
 .img { margin-bottom: -4px;}
 
-.img1 {@include breakpoint(621px, 1500px) {display: none;}}
+.img1 {@include min(481px) {display: none;}}
 
 .img2 {
-    @include breakpoint(0px, 620px) {display: none;}
-    @include breakpoint(1024px, 1500px) {display: none;}
+    @include breakpoint(0px, 480px) {display: none;}
+    @include min(1024px) {display: none;}
 }
 .img3 {@include breakpoint(0, 1023px) {display: none;}}
 
