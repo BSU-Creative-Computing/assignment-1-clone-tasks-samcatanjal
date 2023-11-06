@@ -1,6 +1,8 @@
+
+// list of colors that will be accessed using nth property
 $colors : #4e89ae #43658b #ed6663 #ffa372 #8ccff7 #444;
 
-// breakpoints
+// mixin for breakpoints
 @mixin breakpoint($min, $max) {
     @media (min-width: $min) and (max-width: $max) {
         @content
@@ -15,15 +17,14 @@ $colors : #4e89ae #43658b #ed6663 #ffa372 #8ccff7 #444;
     @media (max-width: $max) {@content}
 };
 
-// centering
+// mixin for centering elements
 @mixin centering {
     display: flex;
     justify-content: center;
     align-items: center;
 };
 
-
-// resetting initial properties
+// resetting certain properties of all elements
 * {
     margin: 0;
     padding: 0;
@@ -38,26 +39,26 @@ header {
     @include centering;
 }
 
-.img { margin-bottom: -4px;}
+.img { margin-bottom: -4px;} // removes space from under image and bottom line of header
 
-.img1 {@include min(481px) {display: none;}}
+.img1 {@include min(481px) {display: none;}} // 200x4200 image does not display when page width is above 480px
 
 .img2 {
-    @include breakpoint(0px, 480px) {display: none;}
+    @include breakpoint(0px, 480px) {display: none;} // 300x300 image only displays when image is between 481px and 1024px
     @include min(1024px) {display: none;}
 }
-.img3 {@include breakpoint(0, 1023px) {display: none;}}
+.img3 {@include breakpoint(0, 1023px) {display: none;}} // 400x400px does not display when it is below 1024px
 
 // rows
 .rows {
-    margin-top: 30px;
+    margin-top: 30px; // margin between this section and header
     .row {
-        width: 100%;
-        height: 30px;
+        width: 100%; // fills whole width of page
+        height: 30px; // height of row
         @include breakpoint (0, 620px) {
-            height: 20px;
+            height: 20px; //smaller height when width of page is under 620px
         }
-        &.one {background-color: nth($colors, 1);}
+        &.one {background-color: nth($colors, 1);} // calling colors of each row from colors list
         &.two {background-color: nth($colors, 2);}
         &.three {background-color: nth($colors, 3);}
         &.four {background-color: nth($colors, 4);}
@@ -68,27 +69,29 @@ header {
 
 // circles
 .circles {
-    @include centering;
-    margin-top: 30px;
-    gap: 10px;
+    @include centering; // centering container of circles on the page
+    margin-top: 30px; // margin between this section and thr "rows" section
+    gap: 10px; // gap between each circle
     .circle {
-        border-radius: 50%;
-        &.one {background-color: nth($colors, 1); height: 70px; width: 70px;}
+        border-radius: 50%; // radius to 50% to make div shape a circle
+        &.one {background-color: nth($colors, 1); height: 70px; width: 70px;} // assigning each circle's size and color
         &.two {background-color: nth($colors, 2); height: 80px; width: 80px;}
         &.three {background-color: nth($colors, 3); height: 90px; width: 90px;}
         &.four {background-color: nth($colors, 4); height: 100px; width: 100px;}
         &:hover {background-color: nth($colors, 6);}
     }
-    @include breakpoint(0, 620px) {
+    @include breakpoint(0, 620px) { // when page width is 620px and below, circles' flex direction is vertical
         display: flex;
         flex-direction: column;
     }
 }
 
-footer {
+
+// footer
+footer { 
     background-color: nth($colors, 5);
     height: 50px;
-    width: 100%;
-    position: fixed;
+    width: 100%; // fills page width
+    position: fixed; // position of footer is fixed to bottom of page
     bottom: 0;
 }
