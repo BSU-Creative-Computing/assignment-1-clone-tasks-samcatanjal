@@ -1,3 +1,4 @@
+/* resetting properties of all elements */
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,12 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
 .body {
     background-color: lightgrey;
 }
 
+/* header section */
+/* aligning and spacing for contents in header to flow from left to right using flex properties */
 header {
     display: flex;
     flex-direction: row;
@@ -24,24 +26,28 @@ h1 {
     padding: 10px;
 }
 
-.search {
+.search { /* designing div to look like a search button */
     background-color: white;
     color: gray;
     border: black solid 2px 2px 2px 2px;
     width: 300px;
 }
 
-nav a{
+nav a{ /* link design */
     color: white;
     text-decoration: none;
     padding: 18px;
 }
 
+/* main section */
+/* makes image fill 100% of its container */
 img {
     width: 100%;
 }
 
-main {
+/* 80% size of page width and aligned center */
+/* flex property to make contents flow left to right */
+main { 
     width: 80%;
     margin: 20px auto;
     display: flex;
@@ -49,28 +55,26 @@ main {
     gap: 10px;
 }
 
-img {
-    width: 100%;
-}
-
+/* fills 50% of container */
 .item1 {
     width: 50%;
     height: fit-content;
     background-color: white;
     padding: 5px;
     box-shadow: 2px 2px 2px 2px lightgray;
-    flex-shrink: 1;
 }
 
+/* fills 30% of container to the left of item1 */
+/* remaining space occupied by gaps */
 aside {
     width:30%;
-    display: flex;
+    display: flex; /* flex property to allow content to flow from left to right */
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* to make each item move to next line when there is no space */
     gap: 10px;
-    flex-shrink: 0;
 }
 
+/* settings for each div in aside container */
 .item {
     width: 45%;
     background-color: white;
@@ -78,19 +82,23 @@ aside {
     box-shadow: 2px 2px 2px 2px lightgray;
 }
 
-.item h2 {
-    font-size: 17px;
-}
-
-.item p {
-    font-size: 15px;
-}
-
+/* paragraphs and title spacing */
 h2, p {
     margin: 10px;
     line-height: 1.5em;
 }
 
+/* separate settings for aside fonts for styling purposes */
+aside .item h2 {
+    font-size: 17px;
+}
+
+aside .item p {
+    font-size: 15px;
+}
+
+/* button settings */
+/* floats right at the bottom of each section in aside */
 .button {
     background-color:cornflowerblue;
     border-radius: 5px;
@@ -101,6 +109,8 @@ h2, p {
     color: white;
 }
 
+/* default settings followed when page width is above 1280px*/
+/* changed element's width percantage to pixels for fixed look purposes */
 @media (min-width: 1281px){
     .item1 {
         width: 600px;
@@ -108,9 +118,11 @@ h2, p {
     aside {
         width: 450px;
     }
-    .menu {display: none;}
+    .menu {display: none;} /* menu link does not appear */
 }
 
+/* width of content is fills 100% of page width */
+/* flex grow property to make content fill up extra space */
 @media (min-width: 1025px) and (max-width: 1280px) {
     main {width: 100%;}
     .item1 {flex-grow: 1;}
@@ -118,18 +130,20 @@ h2, p {
     .menu {display: none;}
 }
 
+/* item width to 100% to allow only 1 section to appear, others appearing vertically after */
 @media (min-width: 801px) and (max-width: 1024px) {
     main {width: 100%;}
     .item1 {flex-grow: 1;}
     .item {
         width: 100%;
     }
-    .menu {display: none;}
+    .menu {display: none;}  /* menu link does not appear */
     nav a {
         margin: -5px;
     }
 }
 
+/* all content in main flowing vertically by changing flex to block */
 @media (min-width: 401px) and (max-width: 800px) {
     main {
         width: 100%;
@@ -140,12 +154,13 @@ h2, p {
         padding-bottom: 80px;
         margin: 0 auto 20px auto;
     }
-    aside {width: 100%;}
+    aside {width: 100%;} /* aside container fills 100% of page width */
     a {font-size: 20px;}
-    .def {display: none;}
-    .search {display: none;}
+    .def {display: none;}  /* other links are replaced by menu link only */
+    .search {display: none;}  /* search bar does not appear */
 }
 
+/* all content in main and aside flowing vertically by changing flex to block */
 @media (max-width: 400px) {
     main {
         width: 100%;
@@ -157,15 +172,14 @@ h2, p {
         margin: 0 auto 20px auto;
     }
     aside {
-        width: 100%;
+        width: 100%;  /* aside container fills 100% of page width */
         display: block;
     }
-
     .item {
         width: 95%;
         margin: 0 auto 20px auto;
         padding-bottom: 80px;
     }
-    .def {display: none;}
-    .search {display: none;}
+    .def {display: none;}   /* other links are replaced by menu link only */
+    .search {display: none;}  /* search bar does not appear */
 }
